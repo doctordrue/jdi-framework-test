@@ -1,0 +1,8 @@
+/target/
+
+.classpath
+.logs
+.settings
+.project
+**/resources/driver/
+/test-output/
