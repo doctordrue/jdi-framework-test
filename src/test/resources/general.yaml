@@ -1,0 +1,10 @@
+name: General Suite
+threadCount: 1
+
+tests: 
+ - name: Search from start page
+   classes:
+      - com.github.doctordrue.google.tests.search.SearchFromStartPageTest
+ - name: Check start page elements
+   classes: 
+      - com.github.doctordrue.google.tests.pages.start.ElementsPresentedTest
