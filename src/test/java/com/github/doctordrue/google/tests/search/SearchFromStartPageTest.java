@@ -7,7 +7,10 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.github.doctordrue.google.tests.BaseTest;
+
+import io.qameta.allure.Step;
 
 public class SearchFromStartPageTest extends BaseTest {
 
@@ -17,9 +20,14 @@ public class SearchFromStartPageTest extends BaseTest {
 		startPage.search("JDI");
 	}
 
+	@Step("Open target page")
+	public void openTargetPage(WebPage page) {
+		page.checkOpened();
+	}
+
 	@Test
 	public void checkResultsPageOpened() {
-		resultsPage.checkOpened();
+		openTargetPage(resultsPage);
 	}
 
 	@Test(dependsOnMethods = "checkResultsPageOpened")
